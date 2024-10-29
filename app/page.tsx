@@ -59,7 +59,12 @@ export default function Home() {
     setUploadSpeed(0);
 
     try {
-      const response = await fetch('/api/getSpeed');
+      const response = await fetch('/api/getSpeed',
+        {
+          cache: 'no-store',
+          method: 'GET',
+        }
+      );
       if (!response.ok) throw new Error('Speed test failed');
       
       const { downloadSpeed, uploadSpeed } = await response.json();
