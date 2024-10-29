@@ -18,7 +18,7 @@ export async function GET() {
     console.log(speedMbps);
     
     return NextResponse.json({ 
-      downloadSpeed: (speedMbps/100000) - 8,
+      downloadSpeed: (speedMbps/100000),
       uploadSpeed: Math.random() * 50 + 20
     });
   } catch (error) {
