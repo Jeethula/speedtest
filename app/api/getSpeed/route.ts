@@ -4,11 +4,11 @@ const FastSpeedtest = require("fast-speedtest-api");
 export async function GET() {
   try {
     const speedtest = new FastSpeedtest({
-      token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm" ,
+      token: process.env.API_TOKEN,
       verbose: false,
-      timeout: 10000,
+      timeout: 7000,
       https: true,
-      urlCount: 5,
+      urlCount: 3,
       bufferSize: 8,
     });
 
